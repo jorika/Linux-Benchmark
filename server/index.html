@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<title>Benchmark</title>
+		<link rel="shortcut icon" href="/favicon.png" type="image/png">
+<head>
+	<script src="/Chart.min.js"></script>
+	<script src="/vue.js"></script>
+	<script src="/Blob.js"></script>
+	<script src="/FileSaver.js"></script>
+	<script src="/papaparse.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div id="data">
+    <span v-for="item in names">
+        <input type="checkbox" :id="item.name" v-model="item.checked">
+        <label>{{ item.name }}</label>
+    </span>
+	<br>
+	<br>
+	<span>Checked names: {{ checkedNames }}</span><br><br>
+	<button id="0" type="button" @click="redraw()">Create Charts</button>
+	<button id="0" type="button" @click="csv() ">Download CSV</button>
+
+	<div class="wrapper" :style="hideStyle">
+		<canvas id="Geekbench3_MultiCore-canvas" width="400" height="200"></canvas>
+		<canvas id="Geekbench3_MultiCoreSet-canvas" width="400" height="200"></canvas>
+		<canvas id="Geekbench3_SingleCore-canvas" width="400" height="200"></canvas>
+		<canvas id="Geekbench3_SingleCoreSet-canvas" width="400" height="200"></canvas>
+		<canvas id="Geekbench4_MultiCore-canvas" width="400" height="200"></canvas>
+		<canvas id="Geekbench4_MultiCoreSet-canvas" width="400" height="200"></canvas>
+		<canvas id="Geekbench4_SingleCore-canvas" width="400" height="200"></canvas>
+		<canvas id="Geekbench4_SingleCoreSet-canvas" width="400" height="200"></canvas>
+		<canvas id="Intel_B7ZIP-canvas" width="400" height="200"></canvas>
+		<canvas id="Intel_erasure-Parrallel_Sort-canvas" width="400" height="200"></canvas>
+		<canvas id="Intel_p-cvf-p-xml-canvas" width="400" height="200"></canvas>
+		<canvas id="Geeks3D-canvas" width="400" height="200"></canvas>
+		<canvas id="SysbenchMaxPrime-canvas" width="400" height="200"></canvas>
+		
+	</div>
+</div>
+
+<script src="index.js"></script>
+<script src="chart.js"></script>
+
+</body>
+</html>
